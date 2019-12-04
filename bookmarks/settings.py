@@ -25,7 +25,7 @@ SECRET_KEY = 'a_p#$%%ff09+)u)sf36$@+@e!hkni=dc9y+iy!o=7i#wmvsy$p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -101,6 +101,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
